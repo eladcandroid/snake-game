@@ -7,7 +7,7 @@ export type Direction = 'UP' | 'DOWN' | 'LEFT' | 'RIGHT';
 
 export interface GameState {
   snake: Position[];
-  apple: Position;
+  orange: Position;
   direction: Direction;
   score: number;
   highScore: number;

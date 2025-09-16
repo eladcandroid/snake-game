@@ -3,9 +3,9 @@ import type { GameState, Direction } from '../types/game';
 import {
   moveSnake,
   checkCollision,
-  checkAppleCollision,
+  checkOrangeCollision,
   growSnake,
-  generateRandomApple,
+  generateRandomOrange,
   saveHighScore,
   getOppositeDirection,
   GAME_SETTINGS,
@@ -15,7 +15,7 @@ interface UseGameLoopProps {
   gameState: GameState;
   updateGameState: (updates: Partial<GameState>) => void;
   gameOver: () => void;
-  onEatApple?: () => void;
+  onEatOrange?: () => void;
   onGameOver?: () => void;
 }
 
@@ -23,7 +23,7 @@ export const useGameLoop = ({
   gameState,
   updateGameState,
   gameOver,
-  onEatApple,
+  onEatOrange,
   onGameOver,
 }: UseGameLoopProps) => {
   const gameLoopRef = useRef<NodeJS.Timeout>();
@@ -40,9 +40,9 @@ export const useGameLoop = ({
       return;
     }
 
-    if (checkAppleCollision(newSnake, gameState.apple)) {
+    if (checkOrangeCollision(newSnake, gameState.orange)) {
       const grownSnake = growSnake(newSnake);
-      const newApple = generateRandomApple(grownSnake);
+      const newOrange = generateRandomOrange(grownSnake);
       const newScore = gameState.score + 10;
       const newSpeed = Math.max(
         gameState.speed - GAME_SETTINGS.speedIncrease,
@@ -51,17 +51,17 @@ export const useGameLoop = ({
 
       updateGameState({
         snake: grownSnake,
-        apple: newApple,
+        orange: newOrange,
         score: newScore,
         speed: newSpeed,
         highScore: Math.max(gameState.highScore, newScore),
       });
 
-      onEatApple?.();
+      onEatOrange?.();
     } else {
       updateGameState({ snake: newSnake });
     }
-  }, [gameState, updateGameState, gameOver, onEatApple, onGameOver]);
+  }, [gameState, updateGameState, gameOver, onEatOrange, onGameOver]);
 
   useEffect(() => {
     if (gameState.gameStatus === 'playing') {

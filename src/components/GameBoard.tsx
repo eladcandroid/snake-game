@@ -4,16 +4,16 @@ import { GAME_SETTINGS } from '../utils/gameUtils';
 
 interface GameBoardProps {
   snake: Position[];
-  apple: Position;
+  orange: Position;
 }
 
-const GameBoard: React.FC<GameBoardProps> = ({ snake, apple }) => {
+const GameBoard: React.FC<GameBoardProps> = ({ snake, orange }) => {
   const { boardWidth, boardHeight, cellSize } = GAME_SETTINGS;
 
   const renderCell = (x: number, y: number) => {
     const isSnakeHead = snake[0]?.x === x && snake[0]?.y === y;
     const isSnakeBody = snake.slice(1).some(segment => segment.x === x && segment.y === y);
-    const isApple = apple.x === x && apple.y === y;
+    const isOrange = orange.x === x && orange.y === y;
 
     let cellClass = 'border border-gray-300';
     let content = '';
@@ -23,9 +23,9 @@ const GameBoard: React.FC<GameBoardProps> = ({ snake, apple }) => {
       content = '🐍';
     } else if (isSnakeBody) {
       cellClass += ' bg-green-400';
-    } else if (isApple) {
-      cellClass += ' bg-red-100';
-      content = '🍎';
+    } else if (isOrange) {
+      cellClass += ' bg-orange-100';
+      content = '🍊';
     } else {
       cellClass += ' bg-gray-100';
     }

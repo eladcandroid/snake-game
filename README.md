@@ -5,10 +5,10 @@ A modern implementation of the classic Snake game built with React, TypeScript, 
 ## Features
 
 - **🎮 Classic Gameplay**: Control the snake with arrow keys or WASD
-- **🍎 Visual Apples**: Beautiful apple graphics instead of simple dots
+- **🍊 Visual Oranges**: Beautiful orange graphics instead of simple dots
 - **🏆 High Score System**: Track your best scores with local storage persistence
 - **👤 Player Names**: Enter your name to personalize the experience
-- **🔊 Sound Effects**: Audio feedback for eating apples and game over
+- **🔊 Sound Effects**: Audio feedback for eating oranges and game over
 - **⏸️ Pause/Resume**: Pause the game anytime with the spacebar
 - **📱 Responsive Design**: Optimized for different screen sizes
 - **🎨 Modern UI**: Clean interface with Tailwind CSS styling
@@ -38,7 +38,7 @@ A modern implementation of the classic Snake game built with React, TypeScript, 
 
 1. Enter your name when prompted (or skip for anonymous play)
 2. Use arrow keys or WASD to control your snake
-3. Eat the red apples (🍎) to grow and increase your score
+3. Eat the oranges (🍊) to grow and increase your score
 4. Avoid hitting the walls or your own tail
 5. Try to beat your high score!
 
@@ -101,7 +101,7 @@ export const GAME_SETTINGS: GameSettings = {
   boardHeight: 20,       // Grid height
   cellSize: 20,          // Cell size in pixels
   initialSpeed: 150,     // Initial game speed (ms)
-  speedIncrease: 5,      // Speed increase per apple
+  speedIncrease: 5,      // Speed increase per orange
 };
 ```
 

@@ -14,15 +14,15 @@ export const getInitialSnake = (): Position[] => [
   { x: 8, y: 10 },
 ];
 
-export const generateRandomApple = (snake: Position[]): Position => {
-  let apple: Position;
+export const generateRandomOrange = (snake: Position[]): Position => {
+  let orange: Position;
   do {
-    apple = {
+    orange = {
       x: Math.floor(Math.random() * GAME_SETTINGS.boardWidth),
       y: Math.floor(Math.random() * GAME_SETTINGS.boardHeight),
     };
-  } while (snake.some(segment => segment.x === apple.x && segment.y === apple.y));
-  return apple;
+  } while (snake.some(segment => segment.x === orange.x && segment.y === orange.y));
+  return orange;
 };
 
 export const moveSnake = (snake: Position[], direction: Direction): Position[] => {
@@ -63,9 +63,9 @@ export const checkCollision = (snake: Position[]): boolean => {
   return snake.slice(1).some(segment => segment.x === head.x && segment.y === head.y);
 };
 
-export const checkAppleCollision = (snake: Position[], apple: Position): boolean => {
+export const checkOrangeCollision = (snake: Position[], orange: Position): boolean => {
   const head = snake[0];
-  return head.x === apple.x && head.y === apple.y;
+  return head.x === orange.x && head.y === orange.y;
 };
 
 export const growSnake = (snake: Position[]): Position[] => {

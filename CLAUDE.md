@@ -25,7 +25,7 @@ This is a React TypeScript Snake game with a custom hook-based architecture that
 ### Core Game Architecture
 
 **State Management Flow:**
-- `useGameState` - Central game state management (snake, apple, score, game status)
+- `useGameState` - Central game state management (snake, orange, score, game status)
 - `useGameLoop` - Game tick logic, collision detection, and snake movement
 - `useKeyPress` - Keyboard input handling and game controls
 - `useSounds` - Web Audio API sound generation for game effects
@@ -70,7 +70,7 @@ export const GAME_SETTINGS: GameSettings = {
   boardHeight: 20,       // Grid cells tall  
   cellSize: 20,          // Pixels per cell
   initialSpeed: 150,     // Initial tick interval (ms)
-  speedIncrease: 5,      // Speed boost per apple eaten
+  speedIncrease: 5,      // Speed boost per orange eaten
 };
 ```
 

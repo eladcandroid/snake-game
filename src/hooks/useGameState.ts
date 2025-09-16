@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import type { GameState, Direction } from '../types/game';
 import {
   getInitialSnake,
-  generateRandomApple,
+  generateRandomOrange,
   GAME_SETTINGS,
   getHighScore,
 } from '../utils/gameUtils';
@@ -13,7 +13,7 @@ export const useGameState = () => {
 
   const [gameState, setGameState] = useState<GameState>({
     snake: initialSnake,
-    apple: generateRandomApple(initialSnake),
+    orange: generateRandomOrange(initialSnake),
     direction: 'RIGHT',
     score: 0,
     highScore,
@@ -31,7 +31,7 @@ export const useGameState = () => {
     setGameState(prev => ({
       ...prev,
       snake: newSnake,
-      apple: generateRandomApple(newSnake),
+      orange: generateRandomOrange(newSnake),
       direction: 'RIGHT',
       score: 0,
       gameStatus: 'waiting',

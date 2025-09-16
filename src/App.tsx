@@ -27,7 +27,7 @@ function App() {
     gameState,
     updateGameState,
     gameOver,
-    onEatApple: playEatSound,
+    onEatOrange: playEatSound,
     onGameOver: playGameOverSound,
   });
 
@@ -91,7 +91,7 @@ function App() {
         />
 
         <div className="flex justify-center">
-          <GameBoard snake={gameState.snake} apple={gameState.apple} />
+          <GameBoard snake={gameState.snake} orange={gameState.orange} />
         </div>
 
         <div className="mt-6 text-center text-sm text-gray-600">

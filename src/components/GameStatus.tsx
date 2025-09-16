@@ -24,7 +24,7 @@ const GameStatus: React.FC<GameStatusProps> = ({
               Ready to Play?
             </h2>
             <p className="text-gray-600 mb-6">
-              Use arrow keys or WASD to control your snake and eat the apples!
+              Use arrow keys or WASD to control your snake and eat the oranges!
             </p>
             <button
               onClick={onStart}
